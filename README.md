@@ -5,7 +5,9 @@ for symmetric encryption.
 Requirements
 ------------
 
-lua >= 5.1
+[libsodium]: http://doc.libsodium.org/
+
+lua >= 5.1, [libsodium][libsodium]
 
 
 Copying
