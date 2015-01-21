@@ -38,3 +38,11 @@ Usage
 	local message = "hello"
 	local ciphertext = symmetric.encrypt( message, key )
 	assert( symmetric.decrypt( ciphertext, key ) == message )
+
+Security concerns
+-----------------
+
+Lua will keep plaintext messages and encryption keys around in memory as
+part of its string interning mechanism. As far as I'm aware, there's
+nothing I can do about this.
+
