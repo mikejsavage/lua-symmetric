@@ -1,0 +1,10 @@
+LIB = symmetric
+SRCS = src/main.c
+
+LDADD += `pkg-config --libs libsodium`
+CFLAGS += `pkg-config --cflags lua51` `pkg-config --cflags libsodium`
+
+SHLIB_MAJOR = 2
+SHLIB_MINOR = 0
+
+.include <bsd.lib.mk>
