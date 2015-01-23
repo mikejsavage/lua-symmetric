@@ -14,8 +14,9 @@
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 */
 
-#include <sodium.h>
+#include <string.h>
 
+#include <sodium.h>
 #include <lua.h>
 #include <lualib.h>
 #include <lauxlib.h>
@@ -64,6 +65,8 @@ static int luasymmetric_encrypt( lua_State * const L ) {
 		message, message_len, ciphertext, key );
 
 	lua_pushlstring( L, ciphertext, ciphertext_len );
+
+	explicit_bzero( ciphertext, ciphertext_len );
 	free( ciphertext );
 
 	return 1;
@@ -99,7 +102,9 @@ static int luasymmetric_decrypt( lua_State * const L ) {
 		lua_pushnil( L );
 	}
 
+	explicit_bzero( message, message_len );
 	free( message );
+
 	return 1;
 }
 
@@ -107,7 +112,8 @@ static int luasymmetric_key( lua_State * const L ) {
 	char key[ crypto_secretbox_KEYBYTES ];
 	arc4random_buf( key, sizeof( key ) );
 
-	lua_pushlstring( L, key, crypto_secretbox_KEYBYTES );
+	lua_pushlstring( L, key, sizeof( key ) );
+	explicit_bzero( key, sizeof( key ) );
 
 	return 1;
 }
