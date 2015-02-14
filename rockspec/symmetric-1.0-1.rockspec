@@ -2,13 +2,13 @@ package = "symmetric"
 version = "1.0-1"
 
 source = {
-	url = "git://github.com/mikejsavage/symmetric.git",
+	url = "git://github.com/mikejsavage/lua-symmetric.git",
 	tag = "v1.0",
 }
 
 description = {
 	summary = "A Lua wrapper for symmetric cryptography, using libsodium's secret box",
-	homepage = "http://github.com/mikejsavage/symmetric",
+	homepage = "http://github.com/mikejsavage/lua-symmetric",
 	license = "MIT",
 	maintainer = "Mike Savage",
 }
