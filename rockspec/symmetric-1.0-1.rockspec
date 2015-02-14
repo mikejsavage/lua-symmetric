@@ -7,7 +7,7 @@ source = {
 }
 
 description = {
-	summary = "A Lua wrapper for symmetric cryptography, using libsodium's secret box"
+	summary = "A Lua wrapper for symmetric cryptography, using libsodium's secret box",
 	homepage = "http://github.com/mikejsavage/symmetric",
 	license = "MIT",
 	maintainer = "Mike Savage",
