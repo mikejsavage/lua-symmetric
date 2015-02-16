@@ -51,7 +51,7 @@ default in future (major) releases.
 
 [sql]: http://dc406.com/home/393-sql-injection-with-raw-md5-hashes.html
 
-<sup>1</sup>: [SQL injection with MD5 hashes][sql]
+<sup>1</sup>: [SQL injection with raw MD5 hashes][sql]
 
 Additionally, Lua will keep plaintext messages and encryption keys
 around in memory as part of its string interning mechanism. As far as
