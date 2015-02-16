@@ -42,7 +42,16 @@ Usage
 Security concerns
 -----------------
 
-Lua will keep plaintext messages and encryption keys around in memory as
-part of its string interning mechanism. As far as I'm aware, there's
-nothing I can do about this.
+Generated keys and ciphertexts will use the full range of ASCII values.
+They should be handled with care - displaying them as-is can introduce
+subtle flaws. For example, keys and ciphertexts can contain quotes,
+which makes them unsafe to insert into SQL queries<sup>1</sup>, HTML and
+JSON. If in doubt, base64/hex encode them.
 
+[sql]: http://dc406.com/home/393-sql-injection-with-raw-md5-hashes.html
+
+<sup>1</sup>: [SQL injection with MD5 hashes][sql]
+
+Additionally, Lua will keep plaintext messages and encryption keys
+around in memory as part of its string interning mechanism. As far as
+I'm aware, there's nothing I can do about this.
