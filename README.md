@@ -45,8 +45,9 @@ Security concerns
 Generated keys and ciphertexts will use the full range of ASCII values.
 They should be handled with care - displaying them as-is can introduce
 subtle flaws. For example, keys and ciphertexts can contain quotes,
-which makes them unsafe to insert into SQL queries<sup>1</sup>, HTML and
-JSON. If in doubt, base64/hex encode them.
+which makes them unsafe to insert into SQL queries<sup>1</sup>. If in
+doubt, base64/hex encode them. I may change my mind and encode by
+default in future (major) releases.
 
 [sql]: http://dc406.com/home/393-sql-injection-with-raw-md5-hashes.html
 
