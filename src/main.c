@@ -91,6 +91,11 @@ static int luasymmetric_decrypt( lua_State * const L ) {
 	const size_t message_len = ciphertext_len - crypto_secretbox_NONCEBYTES - crypto_secretbox_MACBYTES;
 	char * const message = malloc( message_len );
 
+	if( message == NULL ) {
+		lua_pushliteral( L, "out of memory" );
+		return lua_error( L );
+	}
+
 	const int ok = crypto_secretbox_open_easy( message,
 		ciphertext + crypto_secretbox_NONCEBYTES, ciphertext_len - crypto_secretbox_NONCEBYTES,
 		ciphertext, key );
