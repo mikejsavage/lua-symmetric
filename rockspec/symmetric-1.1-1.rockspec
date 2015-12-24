@@ -1,9 +1,9 @@
 package = "symmetric"
-version = "1.0-2"
+version = "1.1-1"
 
 source = {
 	url = "git://github.com/mikejsavage/lua-symmetric.git",
-	tag = "v1.0-2",
+	tag = "v1.1",
 }
 
 description = {
