@@ -16,7 +16,7 @@ debug: CFLAGS += -ggdb3 -UNDEBUG
 debug: all
 
 symmetric.so: $(OBJS)
-	$(CC) -o symmetric.so $(LDFLAGS) $(OBJS)
+	$(CC) -o symmetric.so $(OBJS) $(LDFLAGS)
 
 clean:
 	rm -f symmetric.so
